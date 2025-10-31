@@ -1,0 +1,45 @@
+body {
+    background-color: black;
+}
+
+.cont {
+    height: 90vh;
+    width: 90vw;
+    background-color: #010157;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.player {
+    height: 30px;
+    width: 30px;
+    background-color: bisque;
+    position: absolute;
+    bottom: 1%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+}
+
+.trash {
+    height: 20px;
+    width: 40px;
+    background-color: yellow;
+    position: absolute;
+    cursor: pointer;
+}
+
+#grapple {
+    background-color: rgb(52, 48, 48);
+    color: white;
+    height: 4px;
+    display: none;
+    transform-origin: left center;
+    position: fixed;
+}
+
+.score {
+    color: white;
+}
