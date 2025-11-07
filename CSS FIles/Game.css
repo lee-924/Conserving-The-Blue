@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Audiowide&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Marck+Script&family=Noto+Naskh+Arabic:wght@400..700&family=Pixelify+Sans:wght@400..700&family=Playpen+Sans+Arabic:wght@100..800&family=Playwrite+DE+SAS:wght@100..400&family=Share+Tech+Mono&family=Silkscreen:wght@400;700&family=VT323&display=swap");
+
+
 body {
     background-color: black;
 }
@@ -10,30 +13,43 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
+    border-radius: 2%;
 }
 
 .player {
-    height: 30px;
-    width: 30px;
-    background-color: bisque;
+    height: 100px;
+    width: 200px;
+    background-color: transparent;
     position: absolute;
-    bottom: 1%;
+    bottom: 0px;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%,0%);
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin:0px;
 
 }
 
+.mcLee {
+    height: 80px;
+    width: 80px;
+}
+
 .trash {
-    height: 20px;
-    width: 40px;
-    background-color: yellow;
+    height: 80px;
+    width: 80px;
+    background-color: transparent;
     position: absolute;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
 }
 
 #grapple {
     background-color: rgb(52, 48, 48);
     color: white;
+    border-right: 10px solid white;
     height: 4px;
     display: none;
     transform-origin: left center;
@@ -42,4 +58,43 @@ body {
 
 .score {
     color: white;
+    position: fixed;
+    margin:10px;
+    top: 5px;
+    right:10px;
+    font-family: 'Pixelify Sans',monospace;
+    z-index: 1;
+}
+
+/* RESTART DIV */
+.restart {
+    z-index: 1;
+    position: fixed;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    height:50vh;
+    width: 60vh;
+    background-color: black;
+    display:none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius:5px;
+    border:2px solid white;
+}
+
+.rBtn {
+    height:20px;
+    width: 80%;
+    margin:20px;
+    display:flex;
+    justify-content: center;
+    border-radius:5px;
+}
+.rBtn:hover {
+    cursor: pointer;
+    background-color: slateblue;
+    border: 2px solid white;
+    border-radius:5px;
 }

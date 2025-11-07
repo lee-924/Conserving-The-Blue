@@ -8,6 +8,10 @@ let trashCount = 0
 function spawnTrash() {
     const trash = document.createElement('div')
     trash.className='trash'
+    let query = [`<img src="../images/redCan.png" alt="red can">`,`<img src="../images/sodaCan.png" alt="" />`]
+    let html = query[Math.floor(Math.random() * query.length)]
+    console.log(html)
+    trash.innerHTML = html 
     trash.style.top = Math.random() * (window.innerHeight -150) + 'px'
     trash.style.left = Math.random() * (window.innerWidth - 150) + 'px'
     cont.appendChild(trash)
@@ -31,6 +35,7 @@ function startGrapple(e,trash) {
         grapple.style.display = 'none'
     },500)
     score += 1
+    Restart(score)
     scoreHTML.innerHTML = 'Score: '+score
 
 
@@ -64,4 +69,18 @@ function startGrapple(e,trash) {
 
 }
  
+/* RESTART DIV */
+function Restart(Score) {
+if (Score===10) {
+let restartDiv = document.querySelector('.restart')
+let rBtn = document.querySelector('.res')
+let hBtn = document.querySelector('.exit')
+rBtn.addEventListener('click', () => {
+    window.location.href = 'Game.html'
+})
+hBtn.addEventListener('click', () => {
+    window.location.href = 'index.html'
+})
+restartDiv.style.display = 'flex'
 
+}}

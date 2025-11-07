@@ -1,115 +1,126 @@
-@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Marck+Script&family=Noto+Naskh+Arabic:wght@400..700&family=Pixelify+Sans:wght@400..700&family=Playpen+Sans+Arabic:wght@100..800&family=Playwrite+DE+SAS:wght@100..400&family=Share+Tech+Mono&family=Silkscreen:wght@400;700&family=VT323&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Audiowide&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Marck+Script&family=Noto+Naskh+Arabic:wght@400..700&family=Pixelify+Sans:wght@400..700&family=Playpen+Sans+Arabic:wght@100..800&family=Playwrite+DE+SAS:wght@100..400&family=Share+Tech+Mono&family=Silkscreen:wght@400;700&family=VT323&display=swap");
 
 * {
-    font-family: 'Pixelify Sans';
+  font-family: "Pixelify Sans";
 }
 
-body { 
-    background-image: url('../images/homepage.jpg') ;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 100vh;
-    width: 92vw;
-    margin: 0;
-    padding: 0;
+body {
+  background-image: url("../images/homepage.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 92vw;
+  margin: 0;
+  padding: 0;
 }
 
 header {
-    display: flex;
-    justify-content: center;
-    height: 20vh;
-    width: 100vw;
+  display: flex;
+  justify-content: center;
+  height: 20vh;
+  width: 100vw;
 }
 
 .Title {
-    color: rgb(0, 4, 213);
-    font-family: 'Pixelify Sans';
-    font-size: 40px;
-    font-weight: 900;
-    
+  color: rgb(0, 4, 213);
+  font-family: "Pixelify Sans";
+  font-size: 40px;
+  font-weight: 900;
 }
 
 .btnCont {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 50vh;
-    width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  width: 100vw;
 }
 
-.but { 
-    background-color: beige;
-    height: 40px;
-    width: 200px;
-    border-radius: 10px;
-    border: 2px solid black;
-    margin: 20px;
+.but {
+  background-color: beige;
+  height: 40px;
+  width: 200px;
+  border-radius: 10px;
+  border: 2px solid black;
+  margin: 20px;
 }
-.but:hover { 
-    cursor: pointer;
-    background-color: black;
-    color: white;
+.but:hover {
+  cursor: pointer;
+  background-color: black;
+  color: white;
 }
 
 /* PLAY GAME BUTTON */
-.levels { 
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 50vh;
-    width: 80vw;
-    position: fixed;
-    top:50%;
-    left:50%;
-    transform: translate(-50%,-50%);
-    background-color: black;
-    border: 2px solid white;
-    border-radius: 5px;
-    padding: 10px;
-    overflow-y: auto;
+.levels {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80vw;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: black;
+  border: 2px solid white;
+  border-radius: 5px;
+  padding: 10px;
+  overflow-y: auto;
+  animation-name: levels;
+  animation-fill-mode: forwards;
+  animation-play-state: paused;
+  animation-duration: 2s;
+}
+
+@keyframes levels {
+    0%{height:0vh;
+    width:0vh}
+    20%{height:10vh;}
+    100%{height:60vh;
+    width:80vh;}
+    
 }
 
 .lvl {
-    height: 5vh;
-    width: 60vw;
-    border:2px solid darkred;
-    border-radius: 5px;
+  height: 5vh;
+  width: 60vw;
+  border: 2px solid darkred;
+  border-radius: 5px;
 }
-.lvl:hover { 
-    background-color: darkblue;
-    cursor: pointer;
-    color: white;
+.lvl:hover {
+  background-color: darkblue;
+  cursor: pointer;
+  color: white;
 }
 
 .cancel {
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    background-color: red;
-    border: 2px solid white;
-    border-radius: 5px;
-    height: 20px;
-    width: 20px;
-    display: flex;
-    justify-content: center;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: red;
+  border: 2px solid white;
+  border-radius: 5px;
+  height: 20px;
+  width: 20px;
+  display: flex;
+  justify-content: center;
 }
 
 .cancel:hover {
-    background-color: black;
-    color: white;
-    cursor: pointer
+  background-color: black;
+  color: white;
+  cursor: pointer;
 }
 
 /* BLOCKS */
 .block {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-.instructions { 
-    color: white;
+.instructions {
+  color: white;
 }
