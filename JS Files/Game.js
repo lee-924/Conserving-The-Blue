@@ -35,8 +35,9 @@ function startGrapple(e,trash) {
         grapple.style.display = 'none'
     },500)
     score += 1
-    Restart(score)
-    scoreHTML.innerHTML = 'Score: '+score
+    scoreHTML.innerHTML = score
+    if (score===10) { 
+    Restart(10,'pass')}
 
 
     console.log(score)
@@ -70,11 +71,16 @@ function startGrapple(e,trash) {
 }
  
 /* RESTART DIV */
-function Restart(Score) {
-if (Score===10) {
+function Restart(Score,conf) {
 let restartDiv = document.querySelector('.restart')
 let rBtn = document.querySelector('.res')
 let hBtn = document.querySelector('.exit')
+
+let msg = document.querySelector('.message')
+let emj = document.querySelector('.emj')
+let sc = document.querySelector('.sc')
+
+
 rBtn.addEventListener('click', () => {
     window.location.href = 'Game.html'
 })
@@ -82,5 +88,61 @@ hBtn.addEventListener('click', () => {
     window.location.href = 'index.html'
 })
 restartDiv.style.display = 'flex'
+if (conf==='pass') {
+    emj.innerHTML = '😜'
+    msg.innerHTML = 'Mission Passed Succesfully'
+    msg.style.color = 'lime'
+    let scc = `score:  + ${Score}`
+    sc.innerHTML = scc
+    let res = document.querySelector('.res')
+    res.innerHTML = 'Next Level'
+}
 
-}}
+else if (conf==='fail') {
+        emj.innerHTML = '🥺'
+        msg.innerHTML = 'TIME OUT!!'
+        msg.style.color = 'red'
+        let scc = `score:  + ${Score}`
+        sc.innerHTML = scc
+
+} }
+
+
+/* BACKGROUND ANIMATIONS --- */
+
+let gameArea = document.querySelector('.gameBg')
+let rand = Math.floor(Math.random() * (15-5+1) + 5) 
+for (let i=0; i<rand; i++) {
+    let bub = document.createElement('div')
+    bub.classList.add('bubble')
+    gameArea.appendChild(bub);
+
+}
+
+
+console.log(rand)
+let bubbles = document.querySelectorAll('.bubble')
+bubbles.forEach((ele) => {
+    let coord = ele.getBoundingClientRect()
+    console.log(coord.x,coord.y)
+    console.log(Math.random()* (10-5) + 5)
+    ele.style.top = (Math.random() * ((window.innerHeight-100) - 20)) + 20 + 'px'
+    ele.style.left = (Math.random() * ((window.innerWidth-150) - 20)) + 20 +'px'
+ 
+})
+
+/* TIMER FUNCTION */
+let timer = document.querySelector('.timer')
+counter = 15;
+let counterInterval = setInterval(() => {
+    counter-=1
+    timer.innerHTML = counter
+    if (counter===0) {
+        if (score===10) {
+        clearInterval(counterInterval) }
+
+        else {clearInterval(counterInterval)
+        Restart(score,'fail') }
+        
+    }
+},1000)

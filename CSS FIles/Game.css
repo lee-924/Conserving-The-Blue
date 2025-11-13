@@ -3,6 +3,25 @@
 
 body {
     background-color: black;
+    font-family: 'Pixelify Sans';
+    color:white;
+}
+
+.icon {
+    position: fixed;
+    height: 4vh;
+    width: 4vh;
+    z-index: 1;
+    border: 1px solid white;
+    color:White;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.icon:hover {
+    border:2px solid white;
+    cursor: pointer;
 }
 
 .cont {
@@ -37,13 +56,39 @@ body {
 }
 
 .trash {
-    height: 80px;
-    width: 80px;
+    height: 40px;
+    width: 40px;
     background-color: transparent;
     position: absolute;
     cursor: pointer;
     display: flex;
     justify-content: center;
+}
+
+.bubble {
+    height:10px;
+    width:10px;
+    border:1px solid white;
+    border-radius: 50%;
+    position: absolute;
+    animation: 30s bubbles linear 0s 1 forwards;
+    bottom: 0px;
+    z-index: 0;
+}
+
+@keyframes bubbles {
+    100% {top: 5vh;
+    display: none}
+
+    
+}
+
+.timer { 
+    position: fixed;
+
+    color: white;
+    font-size: 20px;
+    margin: 10px;
 }
 
 #grapple {
@@ -75,6 +120,7 @@ body {
     transform: translate(-50%,-50%);
     height:50vh;
     width: 60vh;
+    padding: 20px;
     background-color: black;
     display:none;
     flex-direction: column;
@@ -85,16 +131,28 @@ body {
 }
 
 .rBtn {
-    height:20px;
+    height:30px;
     width: 80%;
     margin:20px;
     display:flex;
     justify-content: center;
+    align-items: center;
     border-radius:5px;
+    font-family: 'Pixelify Sans';
 }
 .rBtn:hover {
     cursor: pointer;
-    background-color: slateblue;
-    border: 2px solid white;
+    background-color: rgb(0, 0, 0);
+    border: 2px solid red;
     border-radius:5px;
+    color:red;
+}
+
+.message {
+    color:White;
+}
+
+.emj { 
+    font-size: 30px;
+    background-color: transparent;
 }
