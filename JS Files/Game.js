@@ -1,5 +1,39 @@
-let cont = document.querySelector('.cont')
+let diag = document.querySelector('.diag')
+setTimeout(() => {
+    diag.style.display = 'block'
+},6500)
+
 let player = document.querySelector('.player')
+let dialogue = document.querySelector('.dialogue')
+let diagArray = ['lee: Omg i cant believe how dirty the ocean is', 'Carmen: I Know right, humans are so messy', 'lee: Come on, I will clean this area, you go to the other side', 'Carmen: on it! ']
+
+let c = 0
+function space(e)  {
+if (e.code==='Space') { 
+    let d =  diagArray[c]
+    if (d!==undefined) {
+    dialogue.innerHTML = d
+    c+=1       }
+    else { 
+
+        gameStart()
+        document.removeEventListener('keydown',space)
+        diag.style.display = 'none'
+        player.style.animationName = 'backToBottom'
+        
+        c=0;
+
+    }
+}
+}
+document.addEventListener('keydown',space)
+
+
+
+
+
+let cont = document.querySelector('.cont')
+
 const grapple = document.createElement("div");
 grapple.id = "grapple";
 document.body.appendChild(grapple);
@@ -16,17 +50,39 @@ function spawnTrash() {
     trash.style.left = Math.random() * (window.innerWidth - 150) + 'px'
     cont.appendChild(trash)
     trashCount+=1
-    
-    if (trashCount===10) {
-        clearInterval(interval);
-    }
-
     trash.addEventListener("click", (e) => startGrapple(e, trash));
    
     
 }
 
-let interval = setInterval(spawnTrash,1000);
+function gameStart() { 
+/* TIMER FUNCTION */
+let timer = document.querySelector('.timer')
+counter = 15;
+let counterInterval = setInterval(() => {
+    counter-=1
+    timer.innerHTML = counter
+    if (counter===0) {
+        if (score===10) {
+        clearInterval(counterInterval) }
+
+        else {clearInterval(counterInterval)
+        Restart(score,'fail') }
+        
+    }
+},1000) 
+
+let p = 0
+let trashCounter = setInterval(() => {
+    spawnTrash()
+    p+=1
+
+    if (p===10) {
+        clearInterval(trashCounter)
+    }
+},1000)
+
+}
 let scoreHTML = document.querySelector('.score')
 let score = 0
 function startGrapple(e,trash) {
@@ -69,7 +125,8 @@ function startGrapple(e,trash) {
 
 
 }
- 
+
+
 /* RESTART DIV */
 function Restart(Score,conf) {
 let restartDiv = document.querySelector('.restart')
@@ -131,18 +188,3 @@ bubbles.forEach((ele) => {
  
 })
 
-/* TIMER FUNCTION */
-let timer = document.querySelector('.timer')
-counter = 15;
-let counterInterval = setInterval(() => {
-    counter-=1
-    timer.innerHTML = counter
-    if (counter===0) {
-        if (score===10) {
-        clearInterval(counterInterval) }
-
-        else {clearInterval(counterInterval)
-        Restart(score,'fail') }
-        
-    }
-},1000)

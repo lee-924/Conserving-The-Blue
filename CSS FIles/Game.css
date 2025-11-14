@@ -36,24 +36,67 @@ body {
 }
 
 .player {
-    height: 100px;
-    width: 200px;
+    border:2px solid white;
     background-color: transparent;
     position: absolute;
-    bottom: 0px;
     left: 50%;
     transform: translate(-50%,0%);
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: flex-end;
+    align-items: flex-start;
     margin:0px;
+    animation-name: gameStart;
+    animation-duration: 5s;
+    animation-play-state: running;
+    animation-fill-mode: forwards;
 
 }
+
+@keyframes gameStart {
+    0%{left: 10vw;
+    bottom:50%}
+    100%{left: 50%;
+    bottom: 50%;}    
+}
+
+@keyframes backToBottom {
+    0% {left:50%;
+        bottom:50%;
+    }
+    100%{ 
+        left:50%;
+        bottom:0px;
+    }    
+}
+
+.diag {
+    background-color: black;
+    border: 1px solid white;
+    padding: 10px;
+    margin: 0px;
+    border-radius: 10px;
+    font-size: 2vh;
+    display: none;
+    position: absolute; 
+    bottom: 0px;
+    left: 50%;
+    transform: translate(-50%,0%);
+}
+
+.space { 
+    font-size: 10px;
+    justify-self: right;
+}
+
 
 .mcLee {
     height: 80px;
     width: 80px;
+
 }
+
+
 
 .trash {
     height: 40px;
