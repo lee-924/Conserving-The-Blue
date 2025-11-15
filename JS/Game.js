@@ -1,3 +1,23 @@
+/* HOME BUTTON */
+let home = document.querySelector('.home')
+let homeDisp = document.querySelector('.homeDisp')
+home.addEventListener('click', () => {
+    homeDisp.style.display = 'block'
+
+    let cancel = document.querySelector('.cancel')
+    cancel.addEventListener('click', () => {
+        homeDisp.style.display = 'none'
+
+    })
+
+    let backToHome = document.querySelector('.backToHome')
+    backToHome.addEventListener('click',() => {
+        window.location.href = 'index.html'
+    })
+})
+
+
+
 let diag = document.querySelector('.diag')
 setTimeout(() => {
     diag.style.display = 'block'
@@ -20,6 +40,13 @@ if (e.code==='Space') {
         document.removeEventListener('keydown',space)
         diag.style.display = 'none'
         player.style.animationName = 'backToBottom'
+
+        let p2 = document.querySelector('.player2')
+        p2.style.animationName = 'cp2'
+        setTimeout(() => {
+            p2.style.display = 'none'
+        },3000)
+        
         
         c=0;
 
@@ -91,7 +118,7 @@ function startGrapple(e,trash) {
         grapple.style.display = 'none'
     },500)
     score += 1
-    scoreHTML.innerHTML = score
+    scoreHTML.innerHTML = `Score: `+score
     if (score===10) { 
     Restart(10,'pass')}
 
@@ -153,6 +180,11 @@ if (conf==='pass') {
     sc.innerHTML = scc
     let res = document.querySelector('.res')
     res.innerHTML = 'Next Level'
+
+    rBtn.addEventListener('click', () => {
+        window.location.href = 'levelTwo.html'})
+
+    cont.style.backgroundColor = 'green';
 }
 
 else if (conf==='fail') {
@@ -161,6 +193,11 @@ else if (conf==='fail') {
         msg.style.color = 'red'
         let scc = `score:  + ${Score}`
         sc.innerHTML = scc
+
+        rBtn.addEventListener('click', () => {
+            window.location.href = 'Game.html' })
+
+        cont.style.backgroundColor = 'darkred'
 
 } }
 

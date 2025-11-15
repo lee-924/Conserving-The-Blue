@@ -4,11 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="CSS/Game.css" />
-    <title>Waste Collecting Game</title>
+    <title>WCG lvl-1</title>
   </head>
   <body>
     <header>
-      <a class="home" href="index.html">
+      <button class="home">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -23,7 +23,11 @@
             d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
           ></path>
         </svg>
-      </a>
+      </button>
+      <div class="homeDisp">
+        <button class="cancel">X</button>
+        <button class="backToHome">Back to home</button>
+      </div>
     </header>
     <main>
       <div class="cont">
@@ -35,10 +39,12 @@
           <p class="space">(space to continue)</p>
         </div>
         <div class="player">
-          <img class="mcLee" src="images/mcLeeFinal.png" alt="lee" />
+          <span>lee</span>
+          <img class="mcLee" src="images/lee.png" alt="lee" />
         </div>
         <div class="player2">
-          <img class="mcLee" src="images/scubaDiver.png" alt="diver" />
+          <span>carmen</span>
+          <img class="mcLee" src="images/carmen.png" alt="diver" />
         </div>
       </div>
       <div class="restart">
