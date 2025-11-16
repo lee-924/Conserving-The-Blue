@@ -153,7 +153,6 @@ function startGrapple(e,trash) {
 
 }
 
-
 /* RESTART DIV */
 function Restart(Score,conf) {
 let restartDiv = document.querySelector('.restart')
@@ -172,6 +171,15 @@ hBtn.addEventListener('click', () => {
     window.location.href = 'index.html'
 })
 restartDiv.style.display = 'flex'
+
+
+    
+let gameCount = JSON.parse(localStorage.getItem('gameCount'))
+if (gameCount) {
+
+}
+else { gameCount = {TGameCount: 0,winGameCount:0,loseGameCount:0,score:0} }
+
 if (conf==='pass') {
     emj.innerHTML = '😜'
     msg.innerHTML = 'Mission Passed Succesfully'
@@ -185,6 +193,11 @@ if (conf==='pass') {
         window.location.href = 'levelTwo.html'})
 
     cont.style.backgroundColor = 'green';
+
+    gameCount.TGameCount+=1
+    gameCount.winGameCount+=1
+    gameCount.score+= Score
+    localStorage.setItem('gameCount',(JSON.stringify(gameCount)))
 }
 
 else if (conf==='fail') {
@@ -198,6 +211,11 @@ else if (conf==='fail') {
             window.location.href = 'Game.html' })
 
         cont.style.backgroundColor = 'darkred'
+
+        gameCount.TGameCount+=1
+        gameCount.loseGameCount+=1
+        gameCount.score+= Score
+        localStorage.setItem('gameCount',(JSON.stringify(gameCount)))
 
 } }
 

@@ -13,7 +13,7 @@
     <main>
       <div class="btnCont">
         <button class="but playGameBtn">Play Game</button>
-        <button class="but">Settings</button>
+        <button class="but settings">Settings</button>
         <button class="but">Credits</button>
       </div>
 
@@ -46,12 +46,21 @@
           <button class="lvl">start</button>
         </div>
 
-        <button class="cancel">X</button>
+        <button class="cancel c1">X</button>
       </div>
 
       <div class="settingsDiv">
-        <p>Stats:</p>
-        <div class="stat"></div>
+        <p class="statText">Stats:</p>
+        <div class="stat">
+          <button class="cancel c2">X</button>
+          <div class="innerStat">
+            <p>Total Game played: 0</p>
+            <p>Total Game Won: 0</p>
+            <p>Total Game Lost: 0</p>
+            <p>Total Score: 0</p>
+          </div>
+          <button class="resetStat">Reset Stat</button>
+        </div>
       </div>
     </main>
     <script src="JS/index.js"></script>

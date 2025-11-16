@@ -139,6 +139,7 @@ header {
 .settingsDiv {
   height: 40vh;
   width: 50vw;
+  padding:10px;
   background-color: black;
   position: fixed;
   top:50%;
@@ -146,4 +147,27 @@ header {
   transform: translate(-50%,-50%);
   border:2px solid white;
   border-radius: 10px;
+  display: none;
+  flex-direction: column;
+
+}
+
+.statText {
+  color:White;
+  text-decoration: underline;
+  
+}
+
+.stat {
+  color:white;
+}
+
+.resetStat {
+  border-radius: 5px;
+  border: 2px solid darkred;  
+}
+.resetStat:hover {
+  cursor:pointer;
+  background-color: black;
+  color: red;
 }
