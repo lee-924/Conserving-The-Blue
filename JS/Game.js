@@ -221,25 +221,28 @@ else if (conf==='fail') {
 
 
 /* BACKGROUND ANIMATIONS --- */
-
+function bubbleGenarator()  {
 let gameArea = document.querySelector('.gameBg')
 let rand = Math.floor(Math.random() * (15-5+1) + 5) 
 for (let i=0; i<rand; i++) {
     let bub = document.createElement('div')
     bub.classList.add('bubble')
-    gameArea.appendChild(bub);
+    gameArea.appendChild(bub); }
 
-}
+
 
 
 console.log(rand)
 let bubbles = document.querySelectorAll('.bubble')
 bubbles.forEach((ele) => {
-    let coord = ele.getBoundingClientRect()
-    console.log(coord.x,coord.y)
-    console.log(Math.random()* (10-5) + 5)
-    ele.style.top = (Math.random() * ((window.innerHeight-100) - 20)) + 20 + 'px'
+    ele.style.bottom = (Math.random() * (20 -(cont.offsetHeight))) + 20 + 'px'
     ele.style.left = (Math.random() * ((window.innerWidth-150) - 20)) + 20 +'px'
  
-})
+})}
+
+bubbleGenarator()
+
+
+
+
 

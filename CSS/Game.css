@@ -223,17 +223,12 @@ body {
     border:1px solid white;
     border-radius: 50%;
     position: absolute;
-    animation: 30s bubbles linear 0s 1 forwards;
+    animation: 30s bubbles linear 0s infinite;
     bottom: 0px;
     z-index: 0;
 }
 
-@keyframes bubbles {
-    100% {top: 5vh;
-    display: none}
-
-    
-}
+@keyframes bubbles { 100% {bottom: 120vh;}}
 
 .timer { 
     position: fixed;
