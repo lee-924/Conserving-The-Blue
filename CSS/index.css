@@ -52,6 +52,13 @@ header {
   color: white;
 }
 
+@keyframes but {
+  0%{
+    
+  }
+  
+}
+
 /* PLAY GAME BUTTON */
 .levels {
   display: none;

@@ -303,3 +303,15 @@ body {
     font-size: 30px;
     background-color: transparent;
 }
+
+/* BACKGROUND ELEMENTS:  */
+.grass { 
+    height:100px;
+    width:100px;
+    position: absolute;
+    bottom: -25px;
+    padding: 0;
+    margin:0;
+    border:2px solid white;
+}
+

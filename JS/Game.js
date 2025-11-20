@@ -36,9 +36,11 @@ if (e.code==='Space') {
     c+=1       }
     else { 
 
+        dialogue.style.display = 'none'
         gameStart()
         document.removeEventListener('keydown',space)
         diag.style.display = 'none'
+        player.innerHTML = `<img class='mcLee' src="images/agent lee gameMode.png" alt="lol">`
         player.style.animationName = 'backToBottom'
 
         let p2 = document.querySelector('.player2')
@@ -73,8 +75,11 @@ function spawnTrash() {
     let html = query[Math.floor(Math.random() * query.length)]
     console.log(html)
     trash.innerHTML = html 
+    
     trash.style.top = Math.random() * (window.innerHeight -150) + 'px'
     trash.style.left = Math.random() * (window.innerWidth - 150) + 'px'
+ 
+ 
     cont.appendChild(trash)
     trashCount+=1
     trash.addEventListener("click", (e) => startGrapple(e, trash));
@@ -82,9 +87,15 @@ function spawnTrash() {
     
 }
 
+
+let lvlMusic = document.querySelector('.lvlMusic')
 function gameStart() { 
+
+lvlMusic.volume = 0.3;
+lvlMusic.play()
 /* TIMER FUNCTION */
 let timer = document.querySelector('.timer')
+
 counter = 15;
 let counterInterval = setInterval(() => {
     counter-=1
@@ -138,7 +149,7 @@ function startGrapple(e,trash) {
     const angle = Math.atan2(dy, dx) * 180 / Math.PI;
 
     grapple.style.left = x1 + "px";
-    grapple.style.top = y1 + "px";
+    grapple.style.top = y1+30 + "px";
     grapple.style.width = distance + "px";
     grapple.style.transform = `rotate(${angle}deg)`;
     grapple.style.display = "block";
@@ -181,6 +192,14 @@ if (gameCount) {
 else { gameCount = {TGameCount: 0,winGameCount:0,loseGameCount:0,score:0} }
 
 if (conf==='pass') {
+    lvlMusic.pause()
+    lvlMusic.currentTime = 0;
+
+    let gameWon = document.querySelector('.gameWon')
+    gameWon.volume = 0.4;
+    gameWon.currentTime = 0; 
+    gameWon.play()
+
     emj.innerHTML = '😜'
     msg.innerHTML = 'Mission Passed Succesfully'
     msg.style.color = 'lime'
@@ -201,6 +220,13 @@ if (conf==='pass') {
 }
 
 else if (conf==='fail') {
+        lvlMusic.pause()
+        lvlMusic.currentTime = 0;
+
+        let gameLost = document.querySelector('.gameLost')
+        gameLost.volume = 0.4;
+        gameLost.play()
+
         emj.innerHTML = '🥺'
         msg.innerHTML = 'TIME OUT!!'
         msg.style.color = 'red'
