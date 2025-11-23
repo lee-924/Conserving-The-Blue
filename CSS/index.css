@@ -47,10 +47,13 @@ header {
   margin: 20px;
 }
 .but:hover {
+  border: 2px solid darkblue;
   cursor: pointer;
   background-color: black;
   color: white;
+  font-weight: bold;
 }
+
 
 @keyframes but {
   0%{

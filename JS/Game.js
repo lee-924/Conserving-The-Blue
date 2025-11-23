@@ -37,9 +37,9 @@ if (e.code==='Space') {
     else { 
 
         dialogue.style.display = 'none'
+        diag.style.display = 'none'
         gameStart()
         document.removeEventListener('keydown',space)
-        diag.style.display = 'none'
         player.innerHTML = `<img class='mcLee' src="images/agent lee gameMode.png" alt="lol">`
         player.style.animationName = 'backToBottom'
 
