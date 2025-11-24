@@ -315,3 +315,52 @@ body {
     border:2px solid white;
 }
 
+
+/* FISHES */
+.fishes { 
+    display: none;
+    z-index: 2;
+}
+
+.orFish {
+    position: absolute;
+    top: 200px;
+    height: 60px;
+    left: -10vw;
+    animation-name: LRfishes;
+    animation-duration: 30s;
+    animation-iteration-count: 2;
+    animation-play-state: paused;
+}
+
+.OBfish { 
+    position: absolute;
+    top: 300px;
+    right: -10vw;
+    height: 60px;
+    animation-name: RLfishes;
+    animation-duration: 25s;
+    animation-play-state: paused;
+    animation-iteration-count: 2;
+    animation-delay: 5s;
+}
+
+.orFish:hover, .OBfish:hover { 
+    cursor: pointer;
+}
+
+@keyframes LRfishes {
+    0%{left: -10vw;}
+    100% {left: 100vw;}
+
+    
+}
+
+@keyframes RLfishes {
+    0%{right: -10vw;}
+    100% {right: 100vw;}
+
+    
+}
+
+

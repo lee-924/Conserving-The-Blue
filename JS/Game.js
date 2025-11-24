@@ -25,8 +25,20 @@ setTimeout(() => {
 
 let player = document.querySelector('.player')
 let dialogue = document.querySelector('.dialogue')
-let diagArray = ['lee: Omg i cant believe how dirty the ocean is', 'Carmen: I Know right, humans are so messy', 'lee: Come on, I will clean this area, you go to the other side', 'Carmen: on it! ']
-
+let diagArray = [
+  "<p>Agent Koala:<br>You must be Agent lee, Anyhow, We have been assigned to find the mystery behind so much trash in the ocean. Lets get on it!</p>",
+  "<p>Agent lee:<br>Uhh Hi.. not really a great way to introduce yourself. </p>",
+  "<p>Agent Koala:<br>We dont have time for that, I just want to get the job done.</p>",
+  "<p>Agent lee:<br>okay Ms random, but i dont see no trash in this area..</p>",
+  "<p>Agent Koala:<br>sigh* I am Agent Koala, and you will see trash appear one by one in your radar as it detects it.</p>",
+  "<p>Agent lee:<br>sure ms...koala??, so what do we do first?</p>",
+  "<p>Agent Koala:<br>thats AGENT koala! and yeah we have to clear this area first to see the source of the trash.</p>",
+  "<p>Agent lee:<br>okay AGENT koala, Let me handle it.</p>",
+  "<p>Agent Koala:<br>I dont really trust people with work, as they are very slow like koalas searching for food.</p>",
+  "<p>Agent lee:<br>look whose talki-- , nevermind, Dont worry I can assure you I will clean this area in no time!</p>",
+  "<p>Agent Koala:<br>I hope so... better clean up the area within one minute or else I will request the boss to change the agent.</p>",
+  "<p>Agent lee:<br>woah you sound serious... fine...lets get on it shall we</p>"
+]
 let c = 0
 function space(e)  {
 if (e.code==='Space') { 
@@ -57,8 +69,52 @@ if (e.code==='Space') {
 }
 document.addEventListener('keydown',space)
 
+let trashCounter;
+function gameStart() { 
 
+lvlMusic.volume = 0.3;
+lvlMusic.loop = true
+lvlMusic.play()
+/* TIMER FUNCTION */
+let timer = document.querySelector('.timer')
 
+counter = 60;
+let counterInterval = setInterval(() => {
+    counter-=1
+    timer.innerHTML = counter
+    if (counter===0) {
+        if (score===60) {
+        clearInterval(counterInterval) }
+
+        else {clearInterval(counterInterval)
+        Restart(score,'fail', 'Time Ran Out.. SKILL ISSUE')
+         }
+        
+    }
+},1000) 
+
+let p = 0
+    trashCounter = setInterval(() => {
+    spawnTrash()
+    p+=1
+
+    if (p===60) {
+        clearInterval(trashCounter)
+    }
+},950)
+
+let fishes = document.querySelectorAll('.fishes')
+fishes.forEach((ind) => {
+    ind.style.display = 'block'
+    ind.style.animationPlayState = 'running'
+    ind.addEventListener('click', () => {
+        Restart(score,'fail','Killed a fish.. you psycho!!')
+        clearInterval(counterInterval)
+    })
+
+})
+
+}
 
 
 let cont = document.querySelector('.cont')
@@ -73,7 +129,6 @@ function spawnTrash() {
     trash.className='trash'
     let query = [`<img src="../images/redCan.png" alt="red can">`,`<img src="../images/sodaCan.png" alt="" />`]
     let html = query[Math.floor(Math.random() * query.length)]
-    console.log(html)
     trash.innerHTML = html 
     
     trash.style.top = Math.random() * (window.innerHeight -150) + 'px'
@@ -89,38 +144,9 @@ function spawnTrash() {
 
 
 let lvlMusic = document.querySelector('.lvlMusic')
-function gameStart() { 
 
-lvlMusic.volume = 0.3;
-lvlMusic.play()
-/* TIMER FUNCTION */
-let timer = document.querySelector('.timer')
 
-counter = 15;
-let counterInterval = setInterval(() => {
-    counter-=1
-    timer.innerHTML = counter
-    if (counter===0) {
-        if (score===10) {
-        clearInterval(counterInterval) }
 
-        else {clearInterval(counterInterval)
-        Restart(score,'fail') }
-        
-    }
-},1000) 
-
-let p = 0
-let trashCounter = setInterval(() => {
-    spawnTrash()
-    p+=1
-
-    if (p===10) {
-        clearInterval(trashCounter)
-    }
-},1000)
-
-}
 let scoreHTML = document.querySelector('.score')
 let score = 0
 function startGrapple(e,trash) {
@@ -130,11 +156,11 @@ function startGrapple(e,trash) {
     },500)
     score += 1
     scoreHTML.innerHTML = `Score: `+score
-    if (score===10) { 
-    Restart(10,'pass')}
+    if (score===58) { 
+    Restart(58,'pass','Challenge Completed!!!')}
 
 
-    console.log(score)
+  
     const playerRect = player.getBoundingClientRect()
     const trashRect = trash.getBoundingClientRect()
 
@@ -165,7 +191,7 @@ function startGrapple(e,trash) {
 }
 
 /* RESTART DIV */
-function Restart(Score,conf) {
+function Restart(Score,conf,msgs) {
 let restartDiv = document.querySelector('.restart')
 let rBtn = document.querySelector('.res')
 let hBtn = document.querySelector('.exit')
@@ -192,6 +218,8 @@ if (gameCount) {
 else { gameCount = {TGameCount: 0,winGameCount:0,loseGameCount:0,score:0} }
 
 if (conf==='pass') {
+    clearInterval(trashCounter)
+    lvlMusic.loop = false;
     lvlMusic.pause()
     lvlMusic.currentTime = 0;
 
@@ -201,7 +229,7 @@ if (conf==='pass') {
     gameWon.play()
 
     emj.innerHTML = '😜'
-    msg.innerHTML = 'Mission Passed Succesfully'
+    msg.innerHTML = msgs
     msg.style.color = 'lime'
     let scc = `score:  + ${Score}`
     sc.innerHTML = scc
@@ -220,6 +248,8 @@ if (conf==='pass') {
 }
 
 else if (conf==='fail') {
+        clearInterval(trashCounter)
+        lvlMusic.loop = false;
         lvlMusic.pause()
         lvlMusic.currentTime = 0;
 
@@ -228,7 +258,7 @@ else if (conf==='fail') {
         gameLost.play()
 
         emj.innerHTML = '🥺'
-        msg.innerHTML = 'TIME OUT!!'
+        msg.innerHTML = msgs
         msg.style.color = 'red'
         let scc = `score:  + ${Score}`
         sc.innerHTML = scc
@@ -258,7 +288,7 @@ for (let i=0; i<rand; i++) {
 
 
 
-console.log(rand)
+
 let bubbles = document.querySelectorAll('.bubble')
 bubbles.forEach((ele) => {
     ele.style.bottom = (Math.random() * (20 -(cont.offsetHeight))) + 20 + 'px'
