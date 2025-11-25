@@ -25,6 +25,10 @@ body {
 }
 
 /* HOME BUTTON */
+.home { 
+    background-color: transparent;
+    border: none;
+}
 .homeDisp {
     display:none;
     position: fixed;
@@ -41,6 +45,45 @@ body {
     
     
 }
+
+.rs { 
+    margin: 10px;
+    padding: 5px;
+    height: 30px;
+    position: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    border: 2px solid red;
+    color: white;
+    font-family: 'Pixelify Sans';
+    border-radius: 10px;
+}
+
+.rs:hover { 
+    cursor:pointer;
+    border:2px solid darkred;
+    color: red;
+}
+
+.mute { 
+    margin: 10px;
+    padding: 5px;
+    height: 30px;
+    position: flex;
+    justify-content: center;
+    background-color: black;
+    color: white;
+    border: 2px solid red;
+    border-radius: 10px;
+    font-family: 'Pixelify Sans';
+}
+.mute:hover { 
+    cursor: pointer;
+    color: red;
+    border: 2px solid darkred;
+}
+
 .backToHome { 
     width:90%;
     border:2px solid white;
@@ -58,10 +101,15 @@ body {
 
 }
 
+.svg { 
+    color:white;
+}
+
 .backToHome:hover {
     cursor:pointer;
     background-color: black;
     color:Red;
+    border: 2px solid darkred;
 }
 .cancel {
     margin:10px;
@@ -69,6 +117,7 @@ body {
     justify-self: right;
     height:20px;
     width:20px;
+    font-family: 'Pixelify Sans';
     background-color: red;
     color:white;
     border:2px solid white;
@@ -107,7 +156,6 @@ body {
 }
 
 .player {
-    border:2px solid white;
     background-color: transparent;
     position: absolute;
     transform: translate(-50%,0%);
@@ -144,7 +192,6 @@ body {
     display:flex;
     flex-direction: column;
     align-items: center;
-    border:2px solid white;
     background-color:transparent;
     position: absolute;
     transform: translate(-50%,-50%);
@@ -312,7 +359,6 @@ body {
     bottom: -25px;
     padding: 0;
     margin:0;
-    border:2px solid white;
 }
 
 

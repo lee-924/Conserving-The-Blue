@@ -16,6 +16,10 @@ home.addEventListener('click', () => {
     })
 })
 
+let rs = document.querySelector('.rs')
+rs.addEventListener('click', () => {
+    window.location.href = 'Game.html'
+})
 
 
 let diag = document.querySelector('.diag')
@@ -24,26 +28,92 @@ setTimeout(() => {
 },6500)
 
 let player = document.querySelector('.player')
-let dialogue = document.querySelector('.dialogue')
+let dialogue = document.querySelector('.diagDiv')
 let diagArray = [
-  "<p>Agent Koala:<br>You must be Agent lee, Anyhow, We have been assigned to find the mystery behind so much trash in the ocean. Lets get on it!</p>",
-  "<p>Agent lee:<br>Uhh Hi.. not really a great way to introduce yourself. </p>",
-  "<p>Agent Koala:<br>We dont have time for that, I just want to get the job done.</p>",
-  "<p>Agent lee:<br>okay Ms random, but i dont see no trash in this area..</p>",
-  "<p>Agent Koala:<br>sigh* I am Agent Koala, and you will see trash appear one by one in your radar as it detects it.</p>",
-  "<p>Agent lee:<br>sure ms...koala??, so what do we do first?</p>",
-  "<p>Agent Koala:<br>thats AGENT koala! and yeah we have to clear this area first to see the source of the trash.</p>",
-  "<p>Agent lee:<br>okay AGENT koala, Let me handle it.</p>",
-  "<p>Agent Koala:<br>I dont really trust people with work, as they are very slow like koalas searching for food.</p>",
-  "<p>Agent lee:<br>look whose talki-- , nevermind, Dont worry I can assure you I will clean this area in no time!</p>",
-  "<p>Agent Koala:<br>I hope so... better clean up the area within one minute or else I will request the boss to change the agent.</p>",
-  "<p>Agent lee:<br>woah you sound serious... fine...lets get on it shall we</p>"
+  `<div class="dialogue">
+      <p class="speaker">Agent Koala:</p>
+      <p class="line">You must be Agent lee, Anyhow, We have been assigned to find the mystery behind so much trash in the ocean. Lets get on it!</p>
+   </div>`,
+
+  `<div class="dialogue">
+      <p class="speaker">Agent lee:</p>
+      <p class="line">Uhh Hi.. not really a great way to introduce yourself.</p>
+   </div>`,
+
+  `<div class="dialogue">
+      <p class="speaker">Agent Koala:</p>
+      <p class="line">We dont have time for that, I just want to get the job done.</p>
+   </div>`,
+
+  `<div class="dialogue">
+      <p class="speaker">Agent lee:</p>
+      <p class="line">okay Ms random, but i dont see no trash in this area..</p>
+   </div>`,
+
+  `<div class="dialogue">
+      <p class="speaker">Agent Koala:</p>
+      <p class="line">sigh* I am Agent Koala, and you will see trash appear one by one in your radar as it detects it.</p>
+   </div>`,
+
+  `<div class="dialogue">
+      <p class="speaker">Agent lee:</p>
+      <p class="line">sure ms...koala??, so what do we do first?</p>
+   </div>`,
+
+  `<div class="dialogue">
+      <p class="speaker">Agent Koala:</p>
+      <p class="line">thats AGENT koala! and yeah we have to clear this area first to see the source of the trash.</p>
+   </div>`,
+
+  `<div class="dialogue">
+      <p class="speaker">Agent lee:</p>
+      <p class="line">okay AGENT koala, Let me handle it.</p>
+   </div>`,
+
+  `<div class="dialogue">
+      <p class="speaker">Agent Koala:</p>
+      <p class="line">I dont really trust people with work, as they are very slow like koalas searching for food.</p>
+   </div>`,
+
+  `<div class="dialogue">
+      <p class="speaker">Agent lee:</p>
+      <p class="line">look whose talki-- , nevermind, Dont worry I can assure you I will clean this area in no time!</p>
+   </div>`,
+
+  `<div class="dialogue">
+      <p class="speaker">Agent Koala:</p>
+      <p class="line">I hope so... better clean up the area within one minute or else I will request the boss to change the agent.</p>
+   </div>`,
+
+  `<div class="dialogue">
+      <p class="speaker">Agent lee:</p>
+      <p class="line">woah you sound serious... fine...lets get on it shall we</p>
+   </div>`
 ]
+
 let c = 0
+let next = document.querySelector('.next')
+let m1 = document.querySelector('.m1')
+let m2 = document.querySelector('.m2')
 function space(e)  {
 if (e.code==='Space') { 
+    next.volume = 0.4
+    next.play() 
+    next.currentTime = 0
     let d =  diagArray[c]
     if (d!==undefined) {
+        if(c%2===0) { 
+            m2.volume = 0.3
+            m2.play()
+            setTimeout(() => {
+                m2.pause()
+                m2.currentTime = 0;
+            },1500) } 
+        else { 
+            m1.colume = 0.3;
+            m1.play()
+            m1.currentTime = 0
+        }
     dialogue.innerHTML = d
     c+=1       }
     else { 
@@ -70,16 +140,32 @@ if (e.code==='Space') {
 document.addEventListener('keydown',space)
 
 let trashCounter;
+let counterInterval;
 function gameStart() { 
 
 lvlMusic.volume = 0.3;
 lvlMusic.loop = true
 lvlMusic.play()
+
+/* MUTE FUNCTION HOME BUTTON */
+let mute = document.querySelector('.mute')
+let muteState = false
+mute.addEventListener('click', () => {
+    if (muteState===false) { 
+    lvlMusic.volume=0;
+    mute.innerHTML = 'Play Music' 
+    muteState = true} 
+    else {
+    lvlMusic.volume = 0.4
+    mute.innerHTML = 'Mute Music'
+    muteState = false
+    }
+})
 /* TIMER FUNCTION */
 let timer = document.querySelector('.timer')
 
 counter = 60;
-let counterInterval = setInterval(() => {
+    counterInterval = setInterval(() => {
     counter-=1
     timer.innerHTML = counter
     if (counter===0) {
@@ -147,6 +233,7 @@ let lvlMusic = document.querySelector('.lvlMusic')
 
 
 
+
 let scoreHTML = document.querySelector('.score')
 let score = 0
 function startGrapple(e,trash) {
@@ -157,7 +244,8 @@ function startGrapple(e,trash) {
     score += 1
     scoreHTML.innerHTML = `Score: `+score
     if (score===58) { 
-    Restart(58,'pass','Challenge Completed!!!')}
+    Restart(58,'pass','Challenge Completed!!!')
+    clearInterval(counterInterval)}
 
 
   

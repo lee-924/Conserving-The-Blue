@@ -1,3 +1,5 @@
+/* PLAY GAME BUTTON */
+
 let PlayGame = document.querySelector(".levels");
 let PlayGameBtn = document.querySelector(".playGameBtn");
 
@@ -13,17 +15,32 @@ cancel.addEventListener("click", () => {
 });
 
 
+/*  SETTINGS BUTTON  */
 let settingsBtn = document.querySelector('.settings')
 let setDiv = document.querySelector('.settingsDiv')
 
 settingsBtn.addEventListener('click', () => {
   setDiv.style.display = 'flex'
+  setDiv.style.animationPlayState = 'running'
 })
 
 let cancel2 = document.querySelector(".c2");
 cancel2.addEventListener("click", () => {
   setDiv.style.display = "none";
 });
+
+/* CREDIT BUTTON */
+let creditDiv = document.querySelector('.creditDiv')
+let creditBtn = document.querySelector('.creditBtn')
+creditBtn.addEventListener('click', () => {
+  creditDiv.style.display = 'flex'
+  creditDiv.style.animationPlayState = 'running'
+})
+
+let cancel3 = document.querySelector('.c3')
+cancel3.addEventListener('click', () => {
+  creditDiv.style.display = 'none'
+})
 
 /* LEVEL 1 */
 let lvl1 = document.querySelector(".lvl1");

@@ -26,7 +26,11 @@ header {
   color: rgb(0, 4, 213);
   font-family: "Pixelify Sans";
   font-size: 40px;
-  font-weight: 900;
+  font-weight: 600;
+}
+.Title:hover { 
+  font-weight: lighter;
+  text-decoration:underline;
 }
 
 .btnCont {
@@ -180,4 +184,18 @@ header {
   cursor:pointer;
   background-color: black;
   color: red;
+}
+
+/* CREDIT DIV */
+.creditDiv { 
+  display: none;
+  height: 80vh;
+  width: 50vw;
+  background-color: black;
+  border: 1px solid white;
+  position: fixed;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%,-50%);  
+  border-radius: 10px; 
 }
