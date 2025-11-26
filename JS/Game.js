@@ -191,12 +191,21 @@ let p = 0
 
 let fishes = document.querySelectorAll('.fishes')
 fishes.forEach((ind) => {
-    ind.style.display = 'block'
-    ind.style.animationPlayState = 'running'
     ind.addEventListener('click', () => {
         Restart(score,'fail','Killed a fish.. you psycho!!')
         clearInterval(counterInterval)
     })
+
+    let bf = document.querySelector('.bf1')
+    bf.style.animationDuration = '10s'
+    bf.style.animationIterationCount = '6'
+    let c = 0
+    rand = [20,75,35,45,60,75]
+    setInterval(() => {
+        bf.style.top = rand[c]+'vh'
+        c++
+    },10000)
+   
 
 })
 
@@ -213,7 +222,7 @@ let trashCount = 0
 function spawnTrash() {
     const trash = document.createElement('div')
     trash.className='trash'
-    let query = [`<img src="../images/redCan.png" alt="red can">`,`<img src="../images/sodaCan.png" alt="" />`]
+    let query = [`<img src="images/redCan.gif" alt="red can">`,`<img src="images/sodaCan.gif" alt="soda can" />`,`<img src="images/bone.gif" alt="bone" />`,`<img src="images/chips.gif" alt="chips" />`]
     let html = query[Math.floor(Math.random() * query.length)]
     trash.innerHTML = html 
     

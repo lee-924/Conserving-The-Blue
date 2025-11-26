@@ -26,9 +26,30 @@ body {
 
 /* HOME BUTTON */
 .home { 
+    padding: 0px;
     background-color: transparent;
     border: none;
+    height: 30px;
+    width: 30px;
+    position: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+
+.svg { 
+    margin: 0;
+    color:white;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    border: 1px solid white;
+}
+.svg:hover { 
+    border: 2px solid white;
+    cursor: pointer;
+}
+
 .homeDisp {
     display:none;
     position: fixed;
@@ -101,9 +122,6 @@ body {
 
 }
 
-.svg { 
-    color:white;
-}
 
 .backToHome:hover {
     cursor:pointer;
@@ -352,15 +370,47 @@ body {
 }
 
 /* BACKGROUND ELEMENTS:  */
-.grass { 
-    height:100px;
-    width:100px;
+.Ground { 
+    height:15vh;
+    width:5rem;
     position: absolute;
     bottom: -25px;
     padding: 0;
     margin:0;
 }
 
+.gr1{ 
+    left: 10vw;
+}
+.gr2{ 
+    left: 30vw;
+}
+
+.gr3{ 
+    left: 60vw;
+}
+.gr4 { 
+    left:80vw;
+}
+
+
+.rg1 { 
+    left:20vw;
+}
+.rg1 { 
+    left:70vw;
+}
+
+.yg1 { 
+    left:20vw;
+}
+
+.pg1 { 
+    left: 75vw;
+}
+.pg2 { 
+    left: 50vw;
+}
 
 /* FISHES */
 .fishes { 
@@ -369,29 +419,31 @@ body {
 }
 
 .orFish {
+    display: block;
     position: absolute;
     top: 200px;
     height: 60px;
     left: -10vw;
     animation-name: LRfishes;
     animation-duration: 30s;
-    animation-iteration-count: 2;
-    animation-play-state: paused;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
 }
 
 .OBfish { 
+    display: block;
     position: absolute;
     top: 300px;
     right: -10vw;
     height: 60px;
     animation-name: RLfishes;
-    animation-duration: 25s;
-    animation-play-state: paused;
-    animation-iteration-count: 2;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
     animation-delay: 5s;
 }
 
-.orFish:hover, .OBfish:hover { 
+.fishes:hover { 
     cursor: pointer;
 }
 
@@ -406,6 +458,38 @@ body {
     0%{right: -10vw;}
     100% {right: 100vw;}
 
+    
+}
+
+.starFish {
+    display: block;
+    position: absolute; 
+    left: -10vw;
+    top: 15vh;
+    height: 40px;
+    animation-name: LRfishes, stFish;
+    animation-duration: 30s;
+    animation-delay: 10s;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+}
+
+@keyframes stFish {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+    
+}
+
+.bf1 { 
+    display: block;
+    height: 40px;
+    top: 50vh;
+    position: absolute;
+    left:-10vw;
+    animation-name: LRfishes;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
     
 }
 
