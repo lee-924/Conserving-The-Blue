@@ -1,5 +1,13 @@
-/* BACKGROUND SONG */
+
+
+/* START BUTTON or BACKGROUND SONG */
+let startBtn = document.querySelector('.startGame')
+let startDiv = document.querySelector('.startDiv')
 let bgAudio = document.querySelector('.bgSong')
+startBtn.addEventListener('click', () => {
+  startDiv.style.display = 'none'
+
+
 bgAudio.volume = 0.2;
 bgAudio.loop = true
 bgAudio.play()
@@ -17,7 +25,7 @@ muteBtn.addEventListener('click', () => {
     st = true
     muteBtn.innerHTML = 'Pause/Mute Song'
   }
-})
+}) })
 
 /* PLAY GAME BUTTON */
 
@@ -53,7 +61,10 @@ cancel2.addEventListener("click", () => {
 /* CREDIT BUTTON */
 let creditBtn = document.querySelector('.creditBtn')
 creditBtn.addEventListener('click', () => {
+  setTimeout(()=> {
     window.location.href = 'credits.html'
+  },1200)
+    
 })
 
 /* LEVEL 1 */

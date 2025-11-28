@@ -16,6 +16,41 @@ body {
   padding: 0;
 }
 
+.startDiv {
+  position: fixed;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  height: auto;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  padding:10px;
+  align-items: center;
+  background-color: black;
+  color: white;
+  border: 2px solid white;
+  border-radius: 10px;
+  
+}
+
+.startyap {
+  text-align: center;
+  font-family: monospace;
+}
+
+.startGame {
+  border-radius: 5px;
+
+}
+.startGame:hover { 
+  background-color: black;
+  border:2px solid red;
+  color:red;
+  cursor:pointer;
+}
+
 header {
   display: flex;
   justify-content: center;
