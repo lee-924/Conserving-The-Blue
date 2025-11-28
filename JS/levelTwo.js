@@ -25,9 +25,9 @@ let sp = document.querySelector('.space')
 let openDiv = document.querySelector('.od')
 let diags = [
   "<p class='speaker'>Agent Koala:</p><p class='line'>wow, This place looks pretty clean. Anyhow.. since the place is clear now, Our team has planted these pipes which will release chemicals to clean the ocean.</p>",
-  "<p class='speaker'>Agent Lee:</p><p class='line'>wow?? thats it?? woah cleaned this whole place in one minute for tha---</p>",
+  "<p class='speaker'>Agent Lee:</p><p class='line'>wow only?? thats it?? woah cleaned this whole place in one minute for that??</p>",
   "<p class='speaker'>Agent Koala:</p><p class='line'>Atleast I said wow.</p>",
-  "<p class='speaker'>Agent Lee:</p><p class='line'>Whatever, now we need to activate these pipes, You can handle the circuits and I will turn the switch to turn it on.</p>",
+  "<p class='speaker'>Agent Lee:</p><p class='line'>ugh Whatever, now we need to activate these pipes, You can handle the circuit and I will adjust its pressure to turn it on.</p>",
   "<p class='speaker'>Agent Koala:</p><p class='line'>You better not mess this up, its our only chance.</p>",
   "<p class='speaker'>Agent Lee:</p><p class='line'>You and your pesky trust issues...</p>",
   "<p class='speaker'>Agent Koala:</p><p class='line'>Alright lets see the circuit....</p>"
@@ -207,8 +207,8 @@ function allTrue(y,p,b,r) {
 
 let diags2 = [
   '<p class="speaker">Agent Koala:</p><p class="line">Ok I turned on the circuit, Your turn now</p>',
-  '<p class="speaker">Agent lee:</p><p class="line">Ay that was quick, ok lets do thiss</p>',
-  '<p class="speaker">Agent Koala:</p><p class="line">You need be quick with this by the way...</p>',
+  '<p class="speaker">Agent lee:</p><p class="line">Ay that was quick, aight my turn!!</p>',
+  '<p class="speaker">Agent Koala:</p><p class="line">I hope you can handle it...</p>',
   '<p class="speaker">Agent lee:</p><p class="line">count on me</p>'
 ]
 
@@ -402,11 +402,11 @@ function pipeChange() {
 let diags3 = [
   '<p class="speaker">Agent Koala:</p><p class="line">Wow you actually did it. </p>',
   '<p class="speaker">Agent lee:</p><p class="line">I mean ..duhh?? it was fairly easy.</p>',
-  '<p class="speaker">Agent Koala:</p><p class="line">Well look the water is changing color yayy</p>',
-  '<p class="speaker">Agent lee:</p><p class="line">yess all thanks to us yayyy</p>',
+  '<p class="speaker">Agent Koala:</p><p class="line">Well look the waters color changed yayy</p>',
+  '<p class="speaker">Agent lee:</p><p class="line">hehe all thanks to us!!</p>',
   '<p class="speaker">Agent Koala:</p><p class="line">you know maybe you ARE a trustable agent </p>',
   '<p class="speaker">Agent lee:</p><p class="line">woahh seriously? at the end of the game..mhm I mean mission?? right..</p>',
-  '<p class="speaker">Agent Koala:</p><p class="line">shh... enjoy the view...</p>'
+  '<p class="speaker">Agent Koala:</p><p class="line">shh... dont make me take it back...</p>'
 ]
 
 let lol3 = 0

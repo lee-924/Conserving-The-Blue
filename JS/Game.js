@@ -32,12 +32,12 @@ let dialogue = document.querySelector('.diagDiv')
 let diagArray = [
   `<div class="dialogue">
       <p class="speaker">Agent Koala:</p>
-      <p class="line">You must be Agent lee, Anyhow, We have been assigned to find the mystery behind so much trash in the ocean. Lets get on it!</p>
+      <p class="line">You must be Agent lee, Anyhow, We have been assigned to remove the trash in this area. Lets get on it!</p>
    </div>`,
 
   `<div class="dialogue">
       <p class="speaker">Agent lee:</p>
-      <p class="line">Uhh Hi.. not really a great way to introduce yourself.</p>
+      <p class="line">Uhh Hi.. atleast introduce yourself first.</p>
    </div>`,
 
   `<div class="dialogue">
@@ -62,12 +62,12 @@ let diagArray = [
 
   `<div class="dialogue">
       <p class="speaker">Agent Koala:</p>
-      <p class="line">thats AGENT koala! and yeah we have to clear this area first to see the source of the trash.</p>
+      <p class="line">thats AGENT koala! and yeah we have to clear this area first. Alright I will start</p>
    </div>`,
 
   `<div class="dialogue">
       <p class="speaker">Agent lee:</p>
-      <p class="line">okay AGENT koala, Let me handle it.</p>
+      <p class="line">no wait uhh AGENT koala, Let me handle it.</p>
    </div>`,
 
   `<div class="dialogue">
@@ -77,12 +77,12 @@ let diagArray = [
 
   `<div class="dialogue">
       <p class="speaker">Agent lee:</p>
-      <p class="line">look whose talki-- , nevermind, Dont worry I can assure you I will clean this area in no time!</p>
+      <p class="line">look whose talki--  nevermind, Dont worry I can assure you I will clean this area in no time!</p>
    </div>`,
 
   `<div class="dialogue">
       <p class="speaker">Agent Koala:</p>
-      <p class="line">I hope so... better clean up the area within one minute or else I will request the boss to change the agent.</p>
+      <p class="line">No time? right... better clean up the area within one minute or else I will request the team to change the partner.</p>
    </div>`,
 
   `<div class="dialogue">
