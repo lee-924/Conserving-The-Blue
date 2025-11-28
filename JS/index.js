@@ -1,3 +1,24 @@
+/* BACKGROUND SONG */
+let bgAudio = document.querySelector('.bgSong')
+bgAudio.volume = 0.2;
+bgAudio.loop = true
+bgAudio.play()
+let st = true 
+let muteBtn = document.querySelector('.mute')
+muteBtn.addEventListener('click', () => {
+  if (st) {
+    st = false
+  bgAudio.loop = false;
+  bgAudio.pause() 
+  muteBtn.innerHTML = 'Start/Continue Song'}
+  else { 
+    bgAudio.loop = true;
+    bgAudio.play()
+    st = true
+    muteBtn.innerHTML = 'Pause/Mute Song'
+  }
+})
+
 /* PLAY GAME BUTTON */
 
 let PlayGame = document.querySelector(".levels");

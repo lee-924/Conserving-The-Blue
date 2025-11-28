@@ -3,6 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/jpeg" href="images/CTBicon.jpg" />
+
     <link rel="stylesheet" href="CSS/index.css" />
     <title>Conserving The Blue</title>
   </head>
@@ -20,11 +22,11 @@
       <div class="levels">
         <div class="block">
           <img
-            class="wcg-img"
-            src="images/Homepage.jpg"
+            class="wcg-img ch1"
+            src="images/ChapterOne.PNG"
             alt="waste collecting game"
           />
-          <p class="instructions WCG">Chapter 1 : The waste mystery</p>
+          <p class="instructions WCG">Chapter 1 : Koala`s Trust</p>
           <button class="lvl lvl1">start</button>
         </div>
         <div class="block">
@@ -33,23 +35,15 @@
             src="images/Homepage.jpg"
             alt="waste collecting game"
           />
-          <p class="instructions WCG2">Chapter 2 : Trash discovery</p>
+          <p class="instructions WCG2">Chapter 2 : Trash mystery</p>
           <button class="lvl lvl2">start</button>
-        </div>
-        <div class="block">
-          <img
-            class="wcg-img"
-            src="images/Homepage.jpg"
-            alt="waste collecting game"
-          />
-          <p class="instructions">Chapter 3</p>
-          <button class="lvl">start</button>
         </div>
 
         <button class="cancel c1">X</button>
       </div>
 
       <div class="settingsDiv">
+        <button class="mute">Pause/Mute Song</button>
         <p class="statText">Stats:</p>
         <div class="stat">
           <button class="cancel c2">X</button>
@@ -67,6 +61,7 @@
         <button class="cancel c3">X</button>
       </div>
       <audio class="click" src="audio/click.wav"></audio>
+      <audio src="audio/jellyFish.wav" class="bgSong"></audio>
     </main>
     <script src="JS/index.js"></script>
   </body>

@@ -1,0 +1,563 @@
+@import url("https://fonts.googleapis.com/css2?family=Audiowide&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Marck+Script&family=Noto+Naskh+Arabic:wght@400..700&family=Pixelify+Sans:wght@400..700&family=Playpen+Sans+Arabic:wght@100..800&family=Playwrite+DE+SAS:wght@100..400&family=Share+Tech+Mono&family=Silkscreen:wght@400;700&family=VT323&display=swap");
+
+* { 
+    font-family: 'Pixelify Sans';
+}
+body { 
+    background-color: black;
+    color:White;
+    position: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cont { 
+    position: fixed;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    height: 90vh;
+    width: 90vw;
+    background-color: rgb(5,5,116);
+    border-radius: 10px;
+    animation-duration: 10s;
+    animation-fill-mode: forwards;
+    overflow: hidden;
+}
+
+@keyframes bgColor {
+    0% {
+    background-color: rgb(5,5,116);   
+    }
+    100% {
+        background-color:rgb(36, 62, 168); ;
+    }
+    
+}
+
+/* HOME BUTTON */
+.home { 
+    padding: 0px;
+    background-color: transparent;
+    border: none;
+    height: 30px;
+    width: 30px;
+    position: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.svg { 
+    margin: 0;
+    color:white;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    border: 1px solid white;
+}
+.svg:hover { 
+    border: 2px solid white;
+    cursor: pointer;
+}
+
+.homeDisp {
+    display:none;
+    position: fixed;
+    z-index:3;
+    border:2px solid white;
+    background-color: black;
+    height:30vh;
+    width:30vw;
+    border-radius: 10px;
+    animation-name: home;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    overflow: hidden;
+    
+    
+}
+@keyframes home {
+    0%{
+        height:0px;
+        width:0px
+    }
+
+    100% { 
+        height:30vh;
+        width:30vw;
+    }
+    
+}
+.rs { 
+    margin: 10px;
+    padding: 5px;
+    height:30px;
+    width: 20vh;
+    position: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    border: 2px solid red;
+    color: white;
+    font-family: 'Pixelify Sans';
+    border-radius: 10px;
+    
+}
+
+.rs:hover { 
+    cursor:pointer;
+    border:2px solid darkred;
+    color: red;
+}
+
+.mute { 
+    margin: 10px;
+    padding: 5px;
+    height: 30px;
+    position: flex;
+    justify-content: center;
+    background-color: black;
+    color: white;
+    border: 2px solid red;
+    border-radius: 10px;
+    font-family: 'Pixelify Sans';
+}
+.mute:hover { 
+    cursor: pointer;
+    color: red;
+    border: 2px solid darkred;
+}
+
+.backToHome { 
+    width:90%;
+    border:2px solid white;
+    background-color: #010157;
+    color:white;
+    border-radius: 10px;
+    display:flex;
+    justify-content: center;
+    font-family: 'Pixelify Sans';
+    position: absolute;
+    left:50%;
+    bottom:10px;
+    transform: translate(-50%,0);
+    
+
+}
+
+
+.backToHome:hover {
+    cursor:pointer;
+    background-color: black;
+    color:Red;
+    border: 2px solid darkred;
+}
+
+/* CANCEL BUTTON */
+.cancel { 
+    height: 20px;
+    width: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    justify-self: right;
+    background-color: red;
+    color:rgb(0, 0, 0);
+    border: 1px solid white;
+    border-radius: 5px;
+
+}
+.cancel:hover { 
+    color:red;
+    background-color: black;
+    border:2px solid white;
+    cursor: pointer;
+}
+
+/* BACKGROUND ELEMENTS:  */
+
+.Ground { 
+    height:15vh;
+    width:5rem;
+    position: absolute;
+    bottom: -25px;
+    padding: 0;
+    margin:0;
+}
+
+.gr1{ 
+    left: 10vw;
+}
+.gr2{ 
+    left: 35vw;
+}
+
+.gr3{ 
+    left: 50vw;
+}
+.gr4 { 
+    left:70vw;
+}
+
+
+.rg1 { 
+    left:20vw;
+}
+.rg1 { 
+    left:70vw;
+}
+
+.yg1 { 
+    left:20vw;
+}
+.yg2 {
+    left:60vw;
+}
+
+.pg1 { 
+    left: 85vw;
+}
+.pg2 { 
+    left: 50vw;
+}
+
+/* GAME ELEMENTS */
+.pipe { 
+    position: absolute;
+    height:10vh;
+    right:0vw;
+    padding:0px;
+    margin: 0px;
+}
+
+.p1 {
+    top:20vh;
+}
+.p2 {
+    top:40vh;
+}
+.p3 {
+    top:60vh;
+}
+
+/* CHARACTERS  */
+.char {
+    height: 70px;
+    width: 70px;
+    position: absolute;
+    left: -10vw;
+    animation-name: char;
+    animation-duration: 4s;
+    animation-play-state: running;
+    animation-fill-mode: forwards;
+    
+
+}
+
+.mcKoala {
+    top: 20vh;
+}
+.mcLee {
+    top: 30vh;
+    animation-delay: 3s;
+    transform: translate(-50%,0%);
+}
+
+@keyframes char {
+    0%{
+        left:-10vw;
+    }
+    100%{
+        left: 30vw;
+    }
+    
+}
+
+/* DIALOGUE BOX */
+.diagDiv {
+    display: none;
+    background-color: black;
+    border:1px solid white;
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translate(-50%,0%);
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.diag {
+    font-size: 12px;
+}
+.space {
+    font-size: 10px;
+    justify-self: right;
+}
+
+.speaker { 
+    font-weight: bold;
+    text-decoration: 1px underline white;
+}
+
+
+/* CIRCUIT DIV */
+
+.circuitDiv { 
+    position: fixed;
+    width: 80vw;
+    background-color: rgb(46, 45, 45);
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    border: 1px solid red;
+    border-radius: 10px;
+    flex-direction: row;
+    justify-content: center;
+    animation-name: circ;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    display: none;
+    
+}
+
+@keyframes circ {
+    0%{height:0vh}
+    100%{height: 80vh}
+    
+}
+
+.innerCircuit {
+    display: none;
+    position: flex;
+    justify-content: center;
+}
+.pTitle {
+    position: absolute; }
+
+
+.ball {
+    border: 2px solid white; 
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: monospace;
+    color: rgb(252, 252, 252);
+}
+
+.ball:active {
+    cursor: pointer;
+    border:2px solid red;
+}
+
+.b1,.b7 {
+    background-color: rgb(234, 145, 29);
+}
+
+.b2,.b5 {
+    background-color: darkmagenta;
+}
+.b3,.b8 {
+    background-color: darkred;
+}
+.b4,.b6 {
+    background-color: darkblue;
+}
+
+.intText { 
+    position: absolute;
+    top: 65%;
+}
+.int { 
+    position: absolute;
+    height: 25px;
+    top: 80%;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.confirm { 
+    height: 20px;
+    width: 80px;
+    background-color: rgb(37, 198, 5);
+    border-radius: 10px;
+    border:2px solid rgb(255, 252, 252);
+    position: absolute;
+    top: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.confirm:hover {
+    background-color: #010157;
+    border:2px solid red;
+    color:red;
+    cursor:pointer;
+}
+
+.line1 {
+    background-color: rgb(95, 80, 80);
+    position: absolute;
+    transform-origin: left;
+    height: 5px;
+    border-left: 5px solid rgb(255, 255, 255);
+    border-right: 5px solid rgb(255, 255, 255);
+
+    
+}
+
+.disc { 
+    position: absolute;
+    top: 50px;
+    left: 10px;
+}
+.grp1 {
+    display: flex;
+    flex-direction:column;
+    margin: 5px;
+    background-color: black;
+    border: 2px solid white;
+    margin-top: 100px;
+    height: 200px;
+    width: 200px;
+    border-radius: 10px;
+}
+
+.grp2 {
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: flex-end;
+    margin: 5px;
+    background-color: black;
+    border: 2px solid white;
+    margin-top:100px;
+    height:200px;
+    width: 200px;
+    border-radius: 10px;
+}
+
+/* PIPE GAME */
+
+.pipeGameDiv {
+    position: fixed;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    height: 80vh;
+    width: 80vw;
+    background-color: black;
+    border:2px solid white;
+    border-radius: 10px;
+    display: none;
+    justify-content: center;
+    animation-name: circ;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+
+
+}
+
+.innerPipeDiv {
+    display: none;
+}
+
+.pYap {
+    position: absolute;
+
+}
+.pipeBtn {
+    font-family: monospace;
+    height: 60px;
+    width: 60px;
+    margin: 10px;
+    border-radius: 50%;
+    border: 2px solid rgb(236, 236, 236);
+    background-color: black;
+    color:white;
+
+}
+.pipeBtn:hover {
+    cursor:pointer;
+    border: 2px solid rgb(21, 161, 5);
+    background-color: darkred;
+}
+
+.bar { 
+    height: 200px;
+    width: 150px;
+    margin:10px;
+    margin-top: 100px;
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.prog1,.prog2,.prog3 {
+    height: 30px;
+   
+    width: 0%;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.prog1 {
+    background-color: rgb(255, 55, 0);
+}
+.prog2{
+    background-color: darkslateblue;
+}
+.prog3 { 
+    background-color: darkmagenta
+}
+
+.finalDiv { 
+     display: none;
+    position: fixed;
+    top: 50%;
+    left:50%;
+    padding: 20px;
+    transform: translate(-50%,-50%);
+    background-color: rgb(0, 0, 0);
+    height: 80vh;
+    width: 70vw;
+    border: 2px solid white;
+    border-radius: 10px;
+   
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation-name: circ;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+.creditBtn { 
+    height: 30px;
+    width: 120px;
+    border-radius: 10px;
+
+}
+.creditBtn:hover {
+    color: red;
+    border: 2px solid red;
+    cursor:pointer;
+    background-color: black;
+}
+.innerCredit { 
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

@@ -3,9 +3,136 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="CSS/levelTwo.css" />
     <title>WCG lvl-2</title>
   </head>
   <body>
-    <a href="index.html">home button ahh</a>
+    <header>
+      <button class="home">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="size-6 svg"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M4.5 12a7.5 7.5 0 0 0 15 0m-15 0a7.5 7.5 0 1 1 15 0m-15 0H3m16.5 0H21m-1.5 0H12m-8.457 3.077 1.41-.513m14.095-5.13 1.41-.513M5.106 17.785l1.15-.964m11.49-9.642 1.149-.964M7.501 19.795l.75-1.3m7.5-12.99.75-1.3m-6.063 16.658.26-1.477m2.605-14.772.26-1.477m0 17.726-.26-1.477M10.698 4.614l-.26-1.477M16.5 19.794l-.75-1.299M7.5 4.205 12 12m6.894 5.785-1.149-.964M6.256 7.178l-1.15-.964m15.352 8.864-1.41-.513M4.954 9.435l-1.41-.514M12.002 12l-3.75 6.495"
+          />
+        </svg>
+      </button>
+      <div class="homeDisp">
+        <button class="cancel c1">X</button>
+        <button class="rs">Restart Game</button>
+        <button class="mute">Mute Music</button>
+        <button class="backToHome">Back to home</button>
+      </div>
+    </header>
+    <div class="cont">
+      <div class="char">
+        <img class="char mcLee" src="images/Agent Lee.gif" alt="Agent Lee" />
+        <img
+          class="char mcKoala"
+          src="images/Agent Koala.gif"
+          alt="Agent Koala"
+        />
+      </div>
+      <div class="gameEle">
+        <img src="images/pipe.gif" alt="pipe" class="pipe p1" />
+        <img src="images/pipe.gif" alt="pipe" class="pipe p2" />
+        <img src="images/pipe.gif" alt="pipe" class="pipe p3" />
+      </div>
+      <div class="bgEle">
+        <img src="images/grassy.gif" alt="Grass" class="Ground gr1" />
+        <img src="images/grassy.gif" alt="Grass" class="Ground gr2" />
+        <img src="images/grassy.gif" alt="Grass" class="Ground gr3" />
+        <img src="images/grassy.gif" alt="Grass" class="Ground gr4" />
+        <img src="images/redGrass.gif" alt="redGrass" class="Ground rg1" />
+        <img src="images/redGrass.gif" alt="redGrass" class="Ground rg2" />
+        <img src="images/yellowGrass.gif" alt="" class="Ground yg1" />
+        <img src="images/yellowGrass.gif" alt="" class="Ground yg2" />
+        <img src="images/purpleGrass.gif" alt="" class="Ground pg1" />
+        <img src="images/purpleGrass.gif" alt="" class="Ground pg2" />
+      </div>
+
+      <div class="diagDiv">
+        <div class="diag"></div>
+        <p class="space">Space to continue</p>
+      </div>
+
+      <div class="circuitDiv">
+        <div class="line1"></div>
+
+        <p class="pTitle">Pipeline Circuit</p>
+        <div class="innerCircuit">
+          <p class="disc">hint : (combine the colors)</p>
+          <div class="grp1">
+            <div class="ball b1">25</div>
+            <div class="ball b2">26</div>
+            <div class="ball b3">22</div>
+            <div class="ball b4">31</div>
+          </div>
+          <div class="grp2">
+            <div class="ball b5">10</div>
+            <div class="ball b6">07</div>
+            <div class="ball b7">04</div>
+            <div class="ball b8">02</div>
+          </div>
+          <p class="intText">Enter the correct combination:</p>
+          <input placeholder="Enter combination here" type="text" class="int" />
+          <button class="confirm">Confirm</button>
+        </div>
+      </div>
+    </div>
+    <div class="pipeGameDiv">
+      <div class="innerPipeDiv">
+        <p class="pYap">Stabalize the Pressure of the pipes:</p>
+        <div class="bar br1">
+          <p>pipe 1</p>
+          <button class="pipeBtn pb1">165</button>
+          <div class="prog1"></div>
+        </div>
+        <div class="bar br2">
+          <p>pipe 2</p>
+          <button class="pipeBtn pb2">143</button>
+          <div class="prog2"></div>
+        </div>
+        <div class="bar br3">
+          <p>pipe 3</p>
+          <button class="pipeBtn pb3">6</button>
+          <div class="prog3"></div>
+        </div>
+      </div>
+    </div>
+    <div class="finalDiv">
+      <div class="innerCredit">
+        <p>THANK YOU FOR PLAYING!!!</p>
+        <p>
+          Agent lee and Agent Koala have succesfully managed to clean the water
+          that they were assinged to clean
+        </p>
+        <p>However, this is not nearly enough to clean the entire ocean.</p>
+        <p>
+          Everyone of you can be an agent yourself and also contribute just like
+          them
+        </p>
+        <p>(psst...agent lee and Koala are not done yet tho!)</p>
+        <button class="creditBtn">Credit Page</button>
+      </div>
+    </div>
+
+    <audio class="next" src="audio/next.wav"></audio>
+    <audio src="audio/murmurOne.wav" class="m1"></audio>
+    <audio src="audio/murmur2.wav" class="m2"></audio>
+    <audio class="click" src="audio/click.wav"></audio>
+    <audio src="audio/GameWon.wav" class="gameWon"></audio>
+    <audio src="audio/openingDiv.wav" class="od"></audio>
+    <audio src="audio/Level music.wav" class="pipeAudio"></audio>
+    <audio src="audio/electricConnected.wav" class="electricConnected"></audio>
+
+    <script src="JS/levelTwo.js"></script>
   </body>
 </html>

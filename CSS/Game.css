@@ -364,6 +364,10 @@ body {
     color:White;
 }
 
+.speaker { 
+    font-weight: bold;
+    text-decoration: 1px underline white;
+}
 .emj { 
     font-size: 30px;
     background-color: transparent;
@@ -415,7 +419,7 @@ body {
 /* FISHES */
 .fishes { 
     display: none;
-    z-index: 2;
+    z-index: 1;
 }
 
 .orFish {
@@ -491,6 +495,12 @@ body {
     animation-iteration-count: infinite;
     animation-play-state: running;
     
+}
+
+.trash { 
+    animation-name: stFish;
+    animation-duration: 10s;
+    animation-play-state: running;
 }
 
 
