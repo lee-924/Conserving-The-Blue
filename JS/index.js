@@ -51,16 +51,9 @@ cancel2.addEventListener("click", () => {
 });
 
 /* CREDIT BUTTON */
-let creditDiv = document.querySelector('.creditDiv')
 let creditBtn = document.querySelector('.creditBtn')
 creditBtn.addEventListener('click', () => {
-  creditDiv.style.display = 'flex'
-  creditDiv.style.animationPlayState = 'running'
-})
-
-let cancel3 = document.querySelector('.c3')
-cancel3.addEventListener('click', () => {
-  creditDiv.style.display = 'none'
+    window.location.href = 'credits.html'
 })
 
 /* LEVEL 1 */

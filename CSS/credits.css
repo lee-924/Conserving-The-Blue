@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=DotGothic16&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Marck+Script&family=Noto+Naskh+Arabic:wght@400..700&family=Pixelify+Sans:wght@400..700&family=Playpen+Sans+Arabic:wght@100..800&family=Playwrite+DE+SAS:wght@100..400&family=Share+Tech+Mono&family=Silkscreen:wght@400;700&family=VT323&display=swap');
+
+
+body { 
+    background-color: rgb(11, 5, 99);
+}
+
+.cont { 
+    color:White;
+    height: 90vh;
+    width: 90vw;
+    border: 2px solid white;
+    border-radius: 10px;
+    background-color: black;
+    position: fixed;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    overflow: auto;
+    padding: 20px;
+    font-family: 'VT323';
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.title { 
+    color:white;
+    font-size: 25px;
+    text-decoration: underline;
+}
+
+.koalaYap {
+    text-align: center;
+    width: 60vw;
+}
+
+.yap {
+    font-family: 'VT323';
+    text-align: center;
+   
+}
