@@ -319,7 +319,7 @@ body {
     animation-duration: 2s;
     animation-fill-mode: forwards;
     display: none;
-    
+    z-index:2;
 }
 
 @keyframes circ {

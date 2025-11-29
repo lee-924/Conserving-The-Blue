@@ -32,6 +32,7 @@ body {
   color: white;
   border: 2px solid white;
   border-radius: 10px;
+  z-index:2;
   
 }
 
@@ -85,6 +86,7 @@ header {
   border-radius: 10px;
   border: 2px solid black;
   margin: 20px;
+  animation: float 3s ease-in-out infinite;
 }
 .but:hover {
   border: 2px solid darkblue;
@@ -95,11 +97,10 @@ header {
 }
 
 
-@keyframes but {
-  0%{
-    
-  }
-  
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+  100% { transform: translateY(0); }
 }
 
 /* PLAY GAME BUTTON */
@@ -123,6 +124,8 @@ header {
   animation-fill-mode: forwards;
   animation-play-state: paused;
   animation-duration: 2s;
+
+  scrollbar-width: none;
 }
 
 @keyframes levels {
@@ -209,11 +212,25 @@ header {
   display: none;
   flex-direction: column;
   overflow: auto;
+  animation-name: circ;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  scrollbar-width: none;
 
 }
+
+@keyframes circ {
+  0%{
+    height: 0vh;
+  }
+  100% {
+    height: 50vh;
+  }
+  
+}
 .mute { 
-   margin: 20px;
-   border-radius: 5px;
+  margin: 20px;
+  border-radius: 5px;
 }
 .mute:hover { 
   cursor:pointer;
@@ -242,3 +259,84 @@ header {
   color: red;
 }
 
+
+.cont { 
+  position: fixed;
+  top: 0%;
+  left:50%;
+  transform: translate(-50%,0%);
+  height: 80vh;
+  width:99vw;
+  overflow: hidden;
+
+}
+
+.starFish {
+  background: url('../images/starFish.gif');
+  position: absolute; 
+  height: 20px;
+  width: 20px;
+  animation-name: LRfish;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+  left: -15vh;
+  animation-iteration-count: 1;
+
+}
+
+
+
+.starFish:hover, .blueFish:hover {
+  cursor: pointer;
+  background-color: green;
+}
+
+.blueFish {
+  background: url(../images/blueFish.gif);
+  position: absolute; 
+  height: 20px;
+  width: 20px;
+  animation-name: RLfish;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  left: -15vh;
+
+}
+
+@keyframes LRfish {
+  0% { 
+    left: -10vw;
+    transform: rotate(0deg);
+  }
+  100% { 
+    left: 110vw;
+    transform: rotate(360deg);
+  }
+}
+@keyframes RLfish {
+  0% { 
+    left: 110vw;
+    transform: rotate(0deg);
+  }
+  100% { 
+    left: -10vw;
+    transform: rotate(360deg);
+  }
+}
+
+/* UPPER RIGHT ACHIEVEMENT TEXT */
+.star {
+  height:20px;
+  width: 20px;
+  color: rgb(0, 0, 0);
+}
+.starSc {
+  position: fixed;
+  top:0px;
+  right: 20px;
+  color:black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

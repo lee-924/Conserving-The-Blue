@@ -117,3 +117,68 @@ buttons.forEach((ind) => {
 
   })
 })
+
+esterEgg = 0
+starFish = document.querySelector('.starFish')
+blueFish = document.querySelector('.blueFish')
+
+starFish.addEventListener('click', () => {
+  starFish.style.display = 'none'
+  esterEgg ++
+  checkEaster(esterEgg)
+})
+
+blueFish.addEventListener('click', () => {
+  blueFish.style.display = 'none'
+  esterEgg ++
+  checkEaster(esterEgg)
+})
+
+let starSc = document.querySelector('.eSc')
+
+function checkEaster(e) { 
+  if (e==1) { 
+    alert('ACHIEVEMENT UNLOCKED: CATCH THE FISHES FOR THE FIRST TIME!!')
+    starSc.innerHTML = '1/3'
+  }
+  else if (e==5) {
+    alert('ACHIEVEMENT UNCLOCKED: CATCH THE FISHES 5 TIMES!! ')
+    starSc.innerHTML = '2/3'
+  }
+  else if (e==10) {
+    alert('ACHIEVEMENT UNLOCKED: CATCH THE FINSIHES 10 TIMES!! (no more after this so dont waste time)')
+    starSc.innerHTML = '3/3'
+  }
+}
+
+setInterval(() => {
+  starFish.style.display = 'block'
+  blueFish.style.display = 'block'
+  let x = Math.random();
+  let h = ['20vh','56vh','35vh','45vh']
+  let c = 0
+  starFish.style.top = h[c]
+  c++
+  if (c==3) { 
+    c = 0
+  }
+  blueFish.style.top = h[c]
+
+  // Remove previous animation to restart
+  starFish.style.animation = "none";
+  blueFish.style.animation = 'none'
+
+  // Force reflow so animation can restart
+  starFish.offsetHeight;
+  blueFish.offsetHeight;
+
+  if (x > 0.5) {
+    starFish.style.animation = "LRfish 8s linear 1"; // play once
+    blueFish.style.animation = "RLfish 3s linear 1"
+  } else {
+    starFish.style.animation = "RLfish 3s linear 1"; // play once
+    blueFish.style.animation = "LRfish 6s linear 1"
+  }
+
+}, 10000);
+

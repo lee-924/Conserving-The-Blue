@@ -331,7 +331,7 @@ if (conf==='pass') {
     let scc = `score:  + ${Score}`
     sc.innerHTML = scc
     let res = document.querySelector('.res')
-    res.innerHTML = 'Next Level'
+    res.innerHTML = 'Next Chapter'
 
     rBtn.addEventListener('click', () => {
         window.location.href = 'levelTwo.html'})

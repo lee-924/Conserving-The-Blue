@@ -323,6 +323,10 @@ body {
     z-index: 1;
 }
 
+.sc { 
+    font-family: monospace;
+}
+
 /* RESTART DIV */
 .restart {
     z-index: 1;
