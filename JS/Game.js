@@ -96,7 +96,51 @@ let next = document.querySelector('.next')
 let m1 = document.querySelector('.m1')
 let m2 = document.querySelector('.m2')
 function space(e)  {
-if (e.code==='Space') { 
+if (e.type==='keydown') { 
+    if (e.code==='Space') { 
+        next.volume = 0.4
+        next.play() 
+        next.currentTime = 0
+        let d =  diagArray[c]
+        if (d!==undefined) {
+            if(c%2===0) { 
+                m2.volume = 0.3
+                m2.play()
+                setTimeout(() => {
+                    m2.pause()
+                    m2.currentTime = 0;
+                },1500) } 
+            else { 
+                m1.colume = 0.3;
+                m1.play()
+                m1.currentTime = 0
+            }
+        dialogue.innerHTML = d
+        c+=1       }
+        
+    
+    else  { 
+
+        dialogue.style.display = 'none'
+        diag.style.display = 'none'
+        gameStart()
+        document.removeEventListener('keydown',space)
+        document.removeEventListener('pointerdown',space)
+        player.innerHTML = `<img class='mcLee' src="images/agent lee gameMode.png" alt="lol">`
+        player.style.animationName = 'backToBottom'
+
+        let p2 = document.querySelector('.player2')
+        p2.style.animationName = 'cp2'
+        setTimeout(() => {
+            p2.style.display = 'none'
+        },3000)
+        
+        
+        c=0;
+
+        }} }
+
+else { 
     next.volume = 0.4
     next.play() 
     next.currentTime = 0
@@ -116,12 +160,13 @@ if (e.code==='Space') {
         }
     dialogue.innerHTML = d
     c+=1       }
-    else { 
+    else  { 
 
         dialogue.style.display = 'none'
         diag.style.display = 'none'
         gameStart()
         document.removeEventListener('keydown',space)
+        document.removeEventListener('pointerdown',space)
         player.innerHTML = `<img class='mcLee' src="images/agent lee gameMode.png" alt="lol">`
         player.style.animationName = 'backToBottom'
 
@@ -134,10 +179,12 @@ if (e.code==='Space') {
         
         c=0;
 
-    }
-}
-}
+        }
+
+} } 
+
 document.addEventListener('keydown',space)
+document.addEventListener('pointerdown',space)
 
 let trashCounter;
 let counterInterval;

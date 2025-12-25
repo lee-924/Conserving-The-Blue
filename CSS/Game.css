@@ -507,4 +507,23 @@ body {
     animation-play-state: running;
 }
 
+.phone {
+    display: none;
+}
 
+@media (max-width:900px) {
+    .phone {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 2px solid white;
+        background-color: black;
+        height: 50vh;
+        width: 80vw;
+    }
+}
