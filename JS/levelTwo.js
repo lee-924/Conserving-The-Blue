@@ -39,7 +39,9 @@ let c = 0
 setTimeout(() => {diagDiv.style.display = 'block'},5000)
 
 document.addEventListener('keydown',space) 
+document.addEventListener('pointerdown',space)
     function space(s) {
+    if (s.type === 'keydown') {
         if (s.code==='Space') {
         if (diags[c]!==undefined) { 
             next.volume = 0.4
@@ -64,6 +66,7 @@ document.addEventListener('keydown',space)
         }
         else { 
             document.removeEventListener('keydown',space)
+            document.removeEventListener('pointerdown',space)
             diagDiv.style.display = 'none'
             
             diag.style.display = 'none'
@@ -73,6 +76,42 @@ document.addEventListener('keydown',space)
             },1000)
             
         }
+    } }
+    else { 
+        if (diags[c]!==undefined) { 
+            next.volume = 0.4
+            next.play()
+            next.currentTime = 0
+            if (c%2===0) {
+                m2.volume = 0.4
+                m2.play()
+                setTimeout(() => {
+                    m2.pause()
+                    m2.currentTime = 4
+                },1500)
+
+            }
+            else {
+                m1.volume = 0.4
+                m1.play()
+                m1.currentTime = 0
+            }
+            diag.innerHTML = diags[c]
+            c++
+        }
+        else { 
+            document.removeEventListener('keydown',space)
+            document.removeEventListener('pointerdown',space)
+            diagDiv.style.display = 'none'
+            
+            diag.style.display = 'none'
+            sp.style.display = 'none'
+            setTimeout(() => {
+                gameStart()
+            },1000)
+            
+        }
+
     }
         
     } 
@@ -220,42 +259,75 @@ function diag2() {
     diag.innerHTML = diags2[lol]
 
     document.addEventListener('keydown', space2)
+    document.addEventListener('pointerdown',space2)
 }
 
 function space2(s) {
-     if (s.code==='Space') {
-        if (diags2[lol]!==undefined) { 
-            next.volume = 0.4
-            next.play()
-            next.currentTime = 0
-            if (lol%2===0) {
-                m2.volume = 0.4
-                m2.play()
-                setTimeout(() => {
-                    m2.pause()
-                    m2.currentTime = 4
-                },1500)
+    if (s.type==='keydown') { 
+        if (s.code==='Space') {
+            if (diags2[lol]!==undefined) { 
+                next.volume = 0.4
+                next.play()
+                next.currentTime = 0
+                if (lol%2===0) {
+                    m2.volume = 0.4
+                    m2.play()
+                    setTimeout(() => {
+                        m2.pause()
+                        m2.currentTime = 4
+                    },1500)
 
+                }
+                else {
+                    m1.volume = 0.4
+                    m1.play()
+                    m1.currentTime = 0
+                }
+                diag.innerHTML = diags2[lol]
+                lol++
             }
-            else {
-                m1.volume = 0.4
-                m1.play()
-                m1.currentTime = 0
-            }
-            diag.innerHTML = diags2[lol]
-            lol++
-        }
-        else { 
-            document.removeEventListener('keydown',space2)
-            diagDiv.style.display = 'none'
-            diag.style.display = 'none'
-            sp.style.display = 'none'
+            else { 
+                document.removeEventListener('keydown',space2)
+                document.removeEventListener('pointerdown',space2)
+                diagDiv.style.display = 'none'
+                diag.style.display = 'none'
+                sp.style.display = 'none'
 
-            pressureGame()
-        }
-    }
-        
-    } 
+                pressureGame()
+            }
+        } } 
+    else {
+
+            if (diags2[lol]!==undefined) { 
+                next.volume = 0.4
+                next.play()
+                next.currentTime = 0
+                if (lol%2===0) {
+                    m2.volume = 0.4
+                    m2.play()
+                    setTimeout(() => {
+                        m2.pause()
+                        m2.currentTime = 4
+                    },1500)
+
+                }
+                else {
+                    m1.volume = 0.4
+                    m1.play()
+                    m1.currentTime = 0
+                }
+                diag.innerHTML = diags2[lol]
+                lol++
+            }
+            else { 
+                document.removeEventListener('keydown',space2)
+                document.removeEventListener('pointerdown',space2)
+                diagDiv.style.display = 'none'
+                diag.style.display = 'none'
+                sp.style.display = 'none'
+
+                pressureGame()
+            }}}
 
 let pipeGameDiv = document.querySelector('.pipeGameDiv')
 let prog1 = document.querySelector('.prog1')
@@ -417,39 +489,74 @@ function diag3() {
     diag.innerHTML = diags3[lol3]
 
     document.addEventListener('keydown', space3)
+    document.addEventListener('pointerdown', space3)
 }
 
 function space3(s) {
-     if (s.code==='Space') {
+    if (s.tyle==='keydown') { 
+        if (s.code==='Space') {
+            if (diags3[lol3]!==undefined) { 
+                next.volume = 0.4
+                next.play()
+                next.currentTime = 0
+                if (lol3%2===0) {
+                    m2.volume = 0.4
+                    m2.play()
+                    setTimeout(() => {
+                        m2.pause()
+                        m2.currentTime = 4
+                    },1500)
+
+                }
+                else {
+                    m1.volume = 0.4
+                    m1.play()
+                    m1.currentTime = 0
+                }
+                diag.innerHTML = diags3[lol3]
+                lol3++
+            }
+            else { 
+                document.removeEventListener('keydown',space3)
+                diagDiv.style.display = 'none'
+                diag.style.display = 'none'
+                sp.style.display = 'none'
+
+                setTimeout(finalDivfunc,2000)
+            }
+        } } 
+
+    else { 
         if (diags3[lol3]!==undefined) { 
-            next.volume = 0.4
-            next.play()
-            next.currentTime = 0
-            if (lol3%2===0) {
-                m2.volume = 0.4
-                m2.play()
-                setTimeout(() => {
-                    m2.pause()
-                    m2.currentTime = 4
-                },1500)
+                next.volume = 0.4
+                next.play()
+                next.currentTime = 0
+                if (lol3%2===0) {
+                    m2.volume = 0.4
+                    m2.play()
+                    setTimeout(() => {
+                        m2.pause()
+                        m2.currentTime = 4
+                    },1500)
 
+                }
+                else {
+                    m1.volume = 0.4
+                    m1.play()
+                    m1.currentTime = 0
+                }
+                diag.innerHTML = diags3[lol3]
+                lol3++
             }
-            else {
-                m1.volume = 0.4
-                m1.play()
-                m1.currentTime = 0
-            }
-            diag.innerHTML = diags3[lol3]
-            lol3++
-        }
         else { 
-            document.removeEventListener('keydown',space3)
-            diagDiv.style.display = 'none'
-            diag.style.display = 'none'
-            sp.style.display = 'none'
+                document.removeEventListener('keydown',space3)
+                diagDiv.style.display = 'none'
+                diag.style.display = 'none'
+                sp.style.display = 'none'
 
-            setTimeout(finalDivfunc,2000)
-        }
+                setTimeout(finalDivfunc,2000)
+            }
+
     }
         
     } 

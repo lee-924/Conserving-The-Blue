@@ -511,7 +511,7 @@ body {
     display: none;
 }
 
-@media (max-width:900px) {
+@media (min-height:500px) {
     .phone {
         position: absolute;
         top: 50%;
@@ -524,6 +524,13 @@ body {
         border: 2px solid white;
         background-color: black;
         height: 50vh;
-        width: 80vw;
+        width: 80vw; }
+    
+    } 
+
+@media (max-width:1000px) {
+    .restart { 
+        height: 70vh;
+        width: 60vw;
     }
 }
