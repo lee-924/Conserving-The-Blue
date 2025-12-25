@@ -461,6 +461,10 @@ body {
     animation-duration: 2s;
     animation-fill-mode: forwards;
 
+    touch-action: manipulation;
+    user-select: none;
+    -webkit-user-select: none;
+
 
 }
 
@@ -647,7 +651,7 @@ body {
     display: none;
 }
 
-@media (min-height:500px) {
+@media (orientation: portrait) {
     .phone {
         position: absolute;
         top: 50%;
@@ -663,4 +667,3 @@ body {
         width: 80vw; }
     
     } 
-    
