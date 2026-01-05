@@ -374,3 +374,11 @@ header {
   }
   
 }
+
+.leeSig {
+  position: fixed;
+  height: 50px;
+  width: 50px;
+  bottom: 10px;
+  right: 10px;
+}
