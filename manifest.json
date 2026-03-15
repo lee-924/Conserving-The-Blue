@@ -1,0 +1,8 @@
+{
+  "name": "Conserving The Blue",
+  "short_name": "CTB",
+  "display": "standalone",
+  "start_url": "/index.html",
+  "background_color": "#000",
+  "theme_color": "#000"
+}
