@@ -9,12 +9,12 @@
     {
       "src": "images/CTBMobileIcon-192.jpeg",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/jpeg"
     },
     {
       "src": "images/CTBMobileIcon-512.jpeg",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/jpeg"
     }
   ]
 }
