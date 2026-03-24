@@ -343,11 +343,12 @@ header {
 @media (max-width:900px) {
   .Title {
     position: absolute;
-    top: 50px;
+    top: 5vh;
     font-size: 35px;
 
 
   }
+
 
 
   @keyframes levels {
@@ -364,13 +365,14 @@ header {
     
   }
   .ch1 {
-    height: 20vh;
-    width: 80vw;
+    height: 50vh;
+    width: 40vw;
+    border-radius: 10px;
   }
 
   .lvl { 
-    height: 4vh;
-    width: 20vw;
+    height: 6vh;
+    width: 16vw;
   }
   
 }

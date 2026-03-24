@@ -183,8 +183,9 @@ else {
 
 } } 
 
+
 document.addEventListener('keydown',space)
-document.addEventListener('pointerdown',space)
+diag.addEventListener('pointerdown',space)
 
 let trashCounter;
 let counterInterval;
