@@ -28,7 +28,7 @@ Built using only free tools, assets, and libraries.
 📌 Notes
 
 
---> It is not mobile friendly ...yet
+--> It is not mobile friendly ...kinda
 
 --> Works best on desktop browsers.
 
